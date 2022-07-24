@@ -18,8 +18,8 @@ class MainViewModel constructor(private val repository: MainRepository)  : ViewM
         val call = repository.getAllEarthquakes()
         call.enqueue(object : Callback<EarthQuakeResponse> {
             override fun onResponse(call: Call<EarthQuakeResponse>, response: Response<EarthQuakeResponse>) {
-                Log.d("wahid", "joss")
-                Log.d("wahid",response.toString())
+
+
                 val earthQuakeResponse=response.body()
                 if (earthQuakeResponse != null) {
                     earthQuakeList.postValue(earthQuakeResponse.earthquakes)
@@ -27,7 +27,7 @@ class MainViewModel constructor(private val repository: MainRepository)  : ViewM
                 //earthQuakeList.postValue(response.body())
             }
             override fun onFailure(call: Call<EarthQuakeResponse>, t: Throwable) {
-                Log.d("wahid", "not joss")
+
 
                 errorMessage.postValue(t.message)
             }
