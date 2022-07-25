@@ -1,5 +1,6 @@
 package com.example.earthquake
 
+import android.content.Context
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +14,6 @@ class MainViewModel constructor(private val repository: MainRepository)  : ViewM
 
     val earthQuakeList = MutableLiveData<List<EarthQuake>>()
     val errorMessage = MutableLiveData<String>()
-
     fun getallEarthQuakes() {
         val call = repository.getAllEarthquakes()
         call.enqueue(object : Callback<EarthQuakeResponse> {
