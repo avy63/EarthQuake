@@ -1,14 +1,15 @@
 package com.example.earthquake
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlin.properties.Delegates
+
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
@@ -30,8 +31,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Sydney and move the camera
-        val sydney = LatLng(latitude, longitude)
-        mMap.addMarker(MarkerOptions().position(sydney).title("Here is the location"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+        val location = LatLng(latitude, longitude)
+        mMap.addMarker(MarkerOptions().position(location).title("Here is the location"))
+        val cameraPosition = CameraPosition.Builder()
+            .target(location)
+            .zoom(5f).build()
+        //Zoom in and animate the camera.
+        //Zoom in and animate the camera.
+        mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition))
+
+        //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(location.ce))
+
     }
 }

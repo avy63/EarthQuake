@@ -3,10 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/META_U/Earthquake/EarthQuake/app/src/main/res/layout/activity_maps.xml" value="0.1" />
-        <entry key="..\:/META_U/Earthquake/EarthQuake/app/src/main/res/layout/earthquake_viewholder.xml" value="0.17074275362318841" />
-        <entry key="..\:/META_U/Earthquake/EarthQuake/app/src/main/res/layout/loading_alert.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21603260869565216" />
+        <entry key="app/src/main/res/layout/activity_maps.xml" value="0.12447916666666667" />
         <entry key="app/src/main/res/layout/earthquake_viewholder.xml" value="0.25" />
       </map>
     </option>

@@ -36,7 +36,6 @@ android {
 
 }
 ext {
-    permissionDispatcherVersion = "4.7.0"
     supportLibVersion = "1.0.0"
     googlePlayVersion = "17.0.0"
 }
