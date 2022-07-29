@@ -1,10 +1,10 @@
-package com.example.earthquake
+package com.example.earthquake.viewmodel
 
-import android.content.Context
-import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import org.json.JSONObject
+import com.example.earthquake.EarthQuake
+import com.example.earthquake.EarthQuakeResponse
+import com.example.earthquake.network.MainRepository
 
 import retrofit2.Call
 import retrofit2.Callback

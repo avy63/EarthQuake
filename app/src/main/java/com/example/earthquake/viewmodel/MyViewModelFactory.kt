@@ -1,7 +1,8 @@
-package com.example.earthquake
+package com.example.earthquake.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.earthquake.network.MainRepository
 
 class MyViewModelFactory constructor(private val repository: MainRepository): ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {

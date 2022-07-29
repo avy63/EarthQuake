@@ -1,5 +1,6 @@
-package com.example.earthquake
+package com.example.earthquake.network
 
+import com.example.earthquake.EarthQuakeResponse
 import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

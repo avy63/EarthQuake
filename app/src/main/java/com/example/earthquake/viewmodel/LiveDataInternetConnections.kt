@@ -1,4 +1,4 @@
-package com.example.earthquake
+package com.example.earthquake.viewmodel
 import android.app.Application
 import android.content.ContentValues
 import android.content.Context
@@ -25,6 +25,11 @@ class LiveDataInternetConnections(private val connectivityManager: ConnectivityM
             Log.d(ContentValues.TAG, "onAvailable: Network ${network} is Available")
             postValue(true)
         }
+        override fun onLost(network: Network) {
+            super.onLost(network)
+            Log.d(ContentValues.TAG, "onLost: ${network} Network Lost")
+            postValue(false)
+        }
 
         @RequiresApi(Build.VERSION_CODES.M)
         override fun onCapabilitiesChanged(
@@ -41,11 +46,7 @@ class LiveDataInternetConnections(private val connectivityManager: ConnectivityM
             postValue(isInternet && isValidated)
         }
 
-        override fun onLost(network: Network) {
-            super.onLost(network)
-            Log.d(ContentValues.TAG, "onLost: ${network} Network Lost")
-            postValue(false)
-        }
+
     }
 
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
