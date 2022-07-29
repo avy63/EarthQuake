@@ -14,7 +14,6 @@ import timber.log.Timber
 class MainAdapter(private val onClickListener: OnClickListener): RecyclerView.Adapter<MainViewHolder>() {
     var earthquakes = mutableListOf<EarthQuake>()
     fun setEarthquakelist(earthquakes: List<EarthQuake>) {
-        Log.d("wahid","My lis is here "+earthquakes.size)
         var listofdata=earthquakes.toMutableList()
         listofdata.sortByDescending { it.datetime }
         this.earthquakes = listofdata

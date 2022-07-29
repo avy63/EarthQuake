@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             }
             startActivity(intent) })
         cld = LiveDataInternetConnections(application)
+
         viewModel = ViewModelProvider(this, MyViewModelFactory(MainRepository(retrofitService))).get(
             MainViewModel::class.java)
         binding.earthquakelist.adapter = adapter
@@ -51,6 +52,7 @@ class MainActivity : AppCompatActivity() {
             Snackbar.make(binding.root, "Something went wrong!!!", Snackbar.LENGTH_SHORT).show()
 
         })
+        // checking internet connection
         cld.observe(this, { isConnected ->
 
             if (isConnected && !isCalledAPI) {

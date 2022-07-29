@@ -27,7 +27,7 @@ class LiveDataInternetConnections(private val connectivityManager: ConnectivityM
         }
         override fun onLost(network: Network) {
             super.onLost(network)
-            Log.d(ContentValues.TAG, "onLost: ${network} Network Lost")
+            //Log.d(ContentValues.TAG, "onLost: ${network} Network Lost")
             postValue(false)
         }
 
@@ -36,7 +36,7 @@ class LiveDataInternetConnections(private val connectivityManager: ConnectivityM
             network: Network,
             networkCapabilities: NetworkCapabilities) {
             val isInternet = networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
-            Log.d(ContentValues.TAG, "networkCapabilities: ${network} $networkCapabilities")
+            //Log.d(ContentValues.TAG, "networkCapabilities: ${network} $networkCapabilities")
             val isValidated = networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)
             if (isValidated){
                 Log.d(ContentValues.TAG, "hasCapability: ${network} $networkCapabilities")
